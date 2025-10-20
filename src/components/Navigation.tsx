@@ -25,29 +25,34 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass border-b border-border/30 backdrop-blur-xl" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? "glass border-b-2 border-primary/30 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.8)]" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-5">
+      <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
-          {/* Enhanced Logo */}
-          <Link to="/" className="font-bebas text-3xl tracking-[0.2em] hover:text-primary transition-all duration-300 hover:scale-105 neon-text">
+          {/* Revolutionary Logo */}
+          <Link to="/" className="font-bebas text-4xl tracking-[0.25em] hover:text-primary transition-all duration-500 hover:scale-110 neon-text drip magnetic-hover">
             AKEEF STUDIOS
           </Link>
 
-          {/* Enhanced Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
+          {/* Revolutionary Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium tracking-[0.2em] uppercase transition-all duration-300 hover:text-primary relative group ${
-                  location.pathname === link.path ? 'text-primary' : 'text-foreground/80'
+                className={`text-sm font-bold tracking-[0.25em] uppercase transition-all duration-500 hover:text-primary relative group magnetic-hover ${
+                  location.pathname === link.path ? 'text-primary' : 'text-foreground/70'
                 }`}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 ${
+                  location.pathname === link.path ? 'w-full shadow-[0_0_10px_hsl(var(--primary))]' : 'w-0 group-hover:w-full'
+                }`}></span>
+                {location.pathname === link.path && (
+                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full animate-pulse"></span>
+                )}
               </Link>
             ))}
           </div>
