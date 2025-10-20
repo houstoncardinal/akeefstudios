@@ -25,14 +25,14 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "glass border-b-2 border-primary/30 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.8)]" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+        isScrolled ? "glass border-b-2 border-primary/40 backdrop-blur-3xl shadow-[0_10px_40px_rgb(0,0,0,0.9)] translate-y-0" : "bg-transparent translate-y-0"
       }`}
     >
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Revolutionary Logo */}
-          <Link to="/" className="font-bebas text-4xl tracking-[0.25em] hover:text-primary transition-all duration-500 hover:scale-110 neon-text drip magnetic-hover">
+          <Link to="/" className="font-bebas text-4xl tracking-[0.25em] hover:text-primary transition-all duration-700 hover:scale-110 neon-text drip transform-gpu hover:-rotate-2 hover:shadow-[0_0_40px_hsl(var(--primary))]">
             AKEEF STUDIOS
           </Link>
 
@@ -42,16 +42,16 @@ const Navigation = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-bold tracking-[0.25em] uppercase transition-all duration-500 hover:text-primary relative group magnetic-hover ${
+                className={`text-sm font-bold tracking-[0.25em] uppercase transition-all duration-700 hover:text-primary hover:tracking-[0.35em] relative group transform-gpu hover:scale-110 ${
                   location.pathname === link.path ? 'text-primary' : 'text-foreground/70'
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-2 left-0 h-0.5 bg-gradient-to-r from-primary to-primary-glow transition-all duration-500 ${
-                  location.pathname === link.path ? 'w-full shadow-[0_0_10px_hsl(var(--primary))]' : 'w-0 group-hover:w-full'
+                <span className={`absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-700 ${
+                  location.pathname === link.path ? 'w-full shadow-[0_0_15px_hsl(var(--primary))] blur-[1px]' : 'w-0 group-hover:w-full group-hover:shadow-[0_0_15px_hsl(var(--primary))]'
                 }`}></span>
                 {location.pathname === link.path && (
-                  <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-1 h-1 bg-primary rounded-full animate-pulse"></span>
+                  <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-2 h-2 bg-primary rounded-full pulse-glow"></span>
                 )}
               </Link>
             ))}
