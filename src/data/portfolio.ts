@@ -36,20 +36,44 @@ export interface PortfolioVideo {
 // }
 
 export const portfolioVideos: PortfolioVideo[] = [
-  // Add your actual videos here
-  // You can copy entries from your Instagram profile
-  
-  // Example entries (replace with your real content):
   {
     id: 1,
     thumbnail: "/path/to/your/thumbnail1.jpg",
-    title: "YOUR VIDEO TITLE",
-    artist: "Artist Name",
+    title: "LATEST DROP",
+    artist: "Featured Artist",
     year: "2024",
     role: "Director & Editor",
-    instagramUrl: "https://www.instagram.com/p/YOUR_POST_ID/",
-    youtubeUrl: "https://www.youtube.com/watch?v=YOUR_VIDEO_ID",
+    instagramUrl: "https://www.instagram.com/p/DDwBxMHRla_/",
     city: "Baltimore"
   },
-  // Add more videos...
+  {
+    id: 2,
+    thumbnail: "/path/to/your/thumbnail2.jpg",
+    title: "VISUALS",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDrhbVmxLm5/",
+    city: "Dallas"
+  },
+  {
+    id: 3,
+    thumbnail: "/path/to/your/thumbnail3.jpg",
+    title: "NEW WAVE",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDm_W8SREBr/",
+    city: "Vegas"
+  },
+  {
+    id: 4,
+    thumbnail: "/path/to/your/thumbnail4.jpg",
+    title: "CINEMATIC",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDkY8uGR5q3/",
+    city: "DC"
+  }
 ];

@@ -1,73 +1,173 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import VideoCard from "@/components/VideoCard";
+import InstagramEmbed from "@/components/InstagramEmbed";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import videoThumb1 from "@/assets/video-thumb-1.jpg";
-import videoThumb2 from "@/assets/video-thumb-2.jpg";
-import videoThumb3 from "@/assets/video-thumb-3.jpg";
+import { ArrowRight, Instagram, Play } from "lucide-react";
+import { portfolioVideos } from "@/data/portfolio";
 
 const Index = () => {
-  const featuredVideos = [
-    {
-      id: 1,
-      thumbnail: videoThumb1,
-      title: "URBAN NIGHTS",
-      artist: "Featured Artist",
-      year: "2024",
-      role: "Director & Editor",
-    },
-    {
-      id: 2,
-      thumbnail: videoThumb2,
-      title: "NEON DREAMS",
-      artist: "Featured Artist",
-      year: "2024",
-      role: "Director & Editor",
-    },
-    {
-      id: 3,
-      thumbnail: videoThumb3,
-      title: "STREET SYMPHONY",
-      artist: "Featured Artist",
-      year: "2024",
-      role: "Director & Editor",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <Hero />
 
-      {/* Featured Work Section */}
-      <section className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-primary opacity-20"></div>
+      {/* Latest Instagram Content Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
+        
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Showcase</span>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 mb-6 glass px-6 py-3 rounded-full border border-primary/30">
+              <Instagram className="w-5 h-5 text-primary" />
+              <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Live From Instagram</span>
             </div>
-            <h2 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-[0.1em] neon-text mb-6">
-              FEATURED WORK
+            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text mb-4 drip">
+              LATEST DROPS
             </h2>
-            <p className="text-xl text-muted-foreground/80 max-w-2xl mx-auto">
-              Latest cinematic creations pushing boundaries
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
+              Fresh content straight from <span className="text-primary font-semibold">@akeefstudios</span> — follow for daily visual fire
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-fade-in">
-            {featuredVideos.map((video) => (
-              <VideoCard key={video.id} {...video} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto animate-fade-in">
+            {portfolioVideos.slice(0, 4).map((video) => (
+              <div 
+                key={video.id}
+                className="group relative overflow-hidden rounded-2xl glass border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transform-gpu"
+              >
+                {video.instagramUrl && <InstagramEmbed url={video.instagramUrl} />}
+              </div>
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Link to="/portfolio" className="group">
-              <Button variant="neon" size="lg" className="text-lg px-8 py-6 shadow-glow-blue">
-                View Full Portfolio
+          <div className="text-center mt-12 animate-fade-in-up">
+            <a 
+              href="https://instagram.com/akeefstudios" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group inline-block"
+            >
+              <Button variant="neon" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em]">
+                <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
+                FOLLOW ON INSTAGRAM
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 relative">
+        <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
+            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
+              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">50+</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Projects</div>
+            </div>
+            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
+              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">4</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Cities</div>
+            </div>
+            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
+              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">24/7</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Available</div>
+            </div>
+            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
+              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">100%</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Quality</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-24 bg-card/10 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--primary)/0.08),transparent_50%)]"></div>
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="inline-block mb-4">
+              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Services</span>
+            </div>
+            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text mb-4 drip">
+              WHAT WE DO
+            </h2>
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto">
+              Full-service production from concept to final cut
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto animate-fade-in">
+            <div className="group glass p-10 rounded-3xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Play className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bebas text-3xl tracking-[0.15em] mb-4 text-foreground">MUSIC VIDEOS</h3>
+              <p className="text-muted-foreground/80 leading-relaxed">
+                Cinematic storytelling that captures the essence of your music and amplifies your brand
+              </p>
+            </div>
+
+            <div className="group glass p-10 rounded-3xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Play className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bebas text-3xl tracking-[0.15em] mb-4 text-foreground">COMMERCIAL</h3>
+              <p className="text-muted-foreground/80 leading-relaxed">
+                Brand content that cuts through the noise and drives engagement across all platforms
+              </p>
+            </div>
+
+            <div className="group glass p-10 rounded-3xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu">
+              <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Play className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-bebas text-3xl tracking-[0.15em] mb-4 text-foreground">POST PRODUCTION</h3>
+              <p className="text-muted-foreground/80 leading-relaxed">
+                Expert editing, color grading, and VFX to bring your vision to its full potential
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Preview Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
+            <div className="inline-block mb-4">
+              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">The Vision</span>
+            </div>
+            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text drip">
+              CREATING CULTURE
+            </h2>
+            <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-4xl mx-auto">
+              From Baltimore to Las Vegas, AKEEF STUDIOS brings cinematic excellence to every frame. 
+              Specializing in high-energy hip-hop music videos and visual storytelling that moves culture forward.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-6">
+              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
+                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Baltimore</span>
+              </div>
+              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
+                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Dallas</span>
+              </div>
+              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
+                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Vegas</span>
+              </div>
+              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
+                <span className="font-bebas text-lg tracking-[0.2em] text-primary">DC</span>
+              </div>
+            </div>
+            <Link to="/about" className="inline-block">
+              <Button variant="neon" size="lg" className="mt-8 text-lg px-10 py-6 font-bebas tracking-[0.2em]">
+                DISCOVER THE STORY
                 <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
               </Button>
             </Link>
@@ -75,71 +175,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Preview Section */}
-      <section className="py-32 bg-card/20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto text-center space-y-10 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">The Vision</span>
-            </div>
-            <h2 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-[0.1em] neon-text">
-              CREATING CULTURE
-            </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground/90 leading-relaxed max-w-4xl mx-auto">
-              From Baltimore to Las Vegas, AKEEF STUDIOS brings cinematic excellence to every frame. 
-              Specializing in high-energy hip-hop music videos and visual storytelling that moves culture forward.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 pt-8">
-              <div className="glass px-8 py-4 rounded-full border border-primary/20 hover:border-primary/40 hover:shadow-glow-blue transition-all duration-300">
-                <span className="font-bebas text-xl tracking-[0.2em]">Baltimore</span>
-              </div>
-              <div className="glass px-8 py-4 rounded-full border border-primary/20 hover:border-primary/40 hover:shadow-glow-blue transition-all duration-300">
-                <span className="font-bebas text-xl tracking-[0.2em]">Dallas</span>
-              </div>
-              <div className="glass px-8 py-4 rounded-full border border-primary/20 hover:border-primary/40 hover:shadow-glow-blue transition-all duration-300">
-                <span className="font-bebas text-xl tracking-[0.2em]">Vegas</span>
-              </div>
-              <div className="glass px-8 py-4 rounded-full border border-primary/20 hover:border-primary/40 hover:shadow-glow-blue transition-all duration-300">
-                <span className="font-bebas text-xl tracking-[0.2em]">DC</span>
-              </div>
-            </div>
-            <Link to="/about" className="inline-block">
-              <Button variant="purple" size="lg" className="mt-12 text-lg px-8 py-6 shadow-glow-purple">
-                Learn More About The Vision
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
-      <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-primary/5 to-background"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse"></div>
-          <div className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-secondary/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[150px] float-luxury"></div>
+          <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-primary-glow/15 rounded-full blur-[150px] float-luxury" style={{ animationDelay: '2s' }}></div>
         </div>
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-10 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Let's Collaborate</span>
+          <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up glass p-12 md:p-16 rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-700">
+            <div className="inline-block mb-2">
+              <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Let's Work</span>
             </div>
-            <h2 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-[0.1em] neon-text">
+            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text drip">
               READY TO CREATE?
             </h2>
-            <p className="text-2xl md:text-3xl text-foreground/90 leading-relaxed">
-              Let's bring your vision to life with world-class cinematography and editing.
+            <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-2xl mx-auto">
+              Transform your vision into cinematic reality. Book your session and let's create something legendary.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6">
               <Link to="/contact" className="group">
-                <Button variant="hero" size="lg" className="text-lg px-10 py-7 shadow-glow-cyan">
-                  Book Your Shoot
+                <Button variant="hero" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
+                  BOOK YOUR SHOOT
                 </Button>
               </Link>
               <Link to="/portfolio" className="group">
-                <Button variant="neon" size="lg" className="text-lg px-10 py-7 shadow-glow-blue">
-                  Explore Portfolio
+                <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
+                  VIEW PORTFOLIO
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
               </Link>
             </div>
