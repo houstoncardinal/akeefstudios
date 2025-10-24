@@ -20,41 +20,48 @@ const Index = () => {
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-flex items-center gap-3 mb-6 glass px-6 py-3 rounded-full border border-primary/30">
-              <Instagram className="w-5 h-5 text-primary" />
+            <div className="inline-flex items-center gap-3 mb-6 glass px-6 py-3 rounded-full border border-primary/30 hover:border-primary/50 hover:scale-105 transition-all duration-500">
+              <Instagram className="w-5 h-5 text-primary animate-pulse" />
               <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Live From Instagram</span>
             </div>
             <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text mb-4 drip">
               LATEST DROPS
             </h2>
             <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-              Fresh content straight from <span className="text-primary font-semibold">@akeefstudios</span> — follow for daily visual fire
+              Fresh content straight from <span className="text-primary font-semibold">@akeefstudios</span> — 27.5K followers watching daily
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto animate-fade-in">
-            {portfolioVideos.slice(0, 4).map((video) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto animate-fade-in mb-12">
+            {portfolioVideos.slice(0, 8).map((video, index) => (
               <div 
                 key={video.id}
                 className="group relative overflow-hidden rounded-2xl glass border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transform-gpu"
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 {video.instagramUrl && <InstagramEmbed url={video.instagramUrl} />}
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12 animate-fade-in-up">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
             <a 
               href="https://instagram.com/akeefstudios" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group inline-block"
+              className="group"
             >
               <Button variant="neon" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em]">
                 <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
-                FOLLOW ON INSTAGRAM
+                FOLLOW @AKEEFSTUDIOS
               </Button>
             </a>
+            <Link to="/portfolio" className="group">
+              <Button variant="outline" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em] border-primary/40 hover:border-primary hover:bg-primary/10">
+                VIEW FULL PORTFOLIO
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -102,7 +109,7 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto animate-fade-in mb-12">
             <div className="group glass p-10 rounded-3xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu">
               <div className="w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
                 <Play className="w-8 h-8 text-primary" />
@@ -132,6 +139,15 @@ const Index = () => {
                 Expert editing, color grading, and VFX to bring your vision to its full potential
               </p>
             </div>
+          </div>
+
+          <div className="text-center animate-fade-in-up">
+            <Link to="/contact" className="group inline-block">
+              <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
+                GET STARTED TODAY
+                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -191,8 +207,22 @@ const Index = () => {
               READY TO CREATE?
             </h2>
             <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-2xl mx-auto">
-              Transform your vision into cinematic reality. Book your session and let's create something legendary.
+              Transform your vision into cinematic reality. Book your session with AKEEF STUDIOS — trusted by artists across Baltimore, Dallas, Vegas & DC.
             </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 py-8">
+              <div className="glass p-6 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-500">
+                <div className="text-3xl font-bebas text-primary mb-2">27.5K+</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">Instagram Followers</div>
+              </div>
+              <div className="glass p-6 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-500">
+                <div className="text-3xl font-bebas text-primary mb-2">50+</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">Projects Completed</div>
+              </div>
+              <div className="glass p-6 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-500">
+                <div className="text-3xl font-bebas text-primary mb-2">4</div>
+                <div className="text-sm text-muted-foreground uppercase tracking-wider">Cities Served</div>
+              </div>
+            </div>
             <div className="flex flex-col sm:flex-row gap-5 justify-center pt-6">
               <Link to="/contact" className="group">
                 <Button variant="hero" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
@@ -205,6 +235,11 @@ const Index = () => {
                   <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
                 </Button>
               </Link>
+            </div>
+            <div className="pt-6 border-t border-primary/20">
+              <p className="text-sm text-muted-foreground/70">
+                📧 Bookings: <a href="mailto:Akeefstudios.info@gmail.com" className="text-primary hover:text-primary-glow transition-colors">Akeefstudios.info@gmail.com</a>
+              </p>
             </div>
           </div>
         </div>

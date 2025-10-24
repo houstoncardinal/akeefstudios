@@ -75,5 +75,45 @@ export const portfolioVideos: PortfolioVideo[] = [
     role: "Director & Editor",
     instagramUrl: "https://www.instagram.com/p/DDkY8uGR5q3/",
     city: "DC"
+  },
+  {
+    id: 5,
+    thumbnail: "/path/to/your/thumbnail5.jpg",
+    title: "STUDIO SESSION",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDhKxMHRla_/",
+    city: "Baltimore"
+  },
+  {
+    id: 6,
+    thumbnail: "/path/to/your/thumbnail6.jpg",
+    title: "BTS VIBES",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDfhbVmxLm5/",
+    city: "Vegas"
+  },
+  {
+    id: 7,
+    thumbnail: "/path/to/your/thumbnail7.jpg",
+    title: "STREET DREAMS",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDc_W8SREBr/",
+    city: "Dallas"
+  },
+  {
+    id: 8,
+    thumbnail: "/path/to/your/thumbnail8.jpg",
+    title: "NIGHT LIFE",
+    artist: "Featured Artist",
+    year: "2024",
+    role: "Director & Editor",
+    instagramUrl: "https://www.instagram.com/p/DDaY8uGR5q3/",
+    city: "DC"
   }
 ];
