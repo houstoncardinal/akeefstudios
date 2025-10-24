@@ -1,10 +1,10 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import InstagramEmbed from "@/components/InstagramEmbed";
+import InstagramGrid from "@/components/InstagramGrid";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Instagram, Play } from "lucide-react";
+import { ArrowRight, Instagram, Play, Award, Users, TrendingUp, Zap, Camera, Film } from "lucide-react";
 import { portfolioVideos } from "@/data/portfolio";
 
 const Index = () => {
@@ -32,17 +32,13 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto animate-fade-in mb-12">
-            {portfolioVideos.slice(0, 8).map((video, index) => (
-              <div 
-                key={video.id}
-                className="group relative overflow-hidden rounded-2xl glass border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transform-gpu"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {video.instagramUrl && <InstagramEmbed url={video.instagramUrl} />}
-              </div>
-            ))}
-          </div>
+          <InstagramGrid 
+            posts={portfolioVideos.slice(0, 8).map(video => ({
+              id: video.id,
+              url: video.instagramUrl || '',
+              title: video.title
+            }))}
+          />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
             <a 
@@ -66,26 +62,82 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 relative">
+      {/* Enhanced Stats & Trust Section */}
+      <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.1),transparent_70%)]"></div>
+        
         <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
-            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
-              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">50+</div>
-              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Projects</div>
+          {/* Main Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-16">
+            <div className="group text-center space-y-4 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-110 transform-gpu animate-fade-in">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Award className="w-8 h-8 text-primary" />
+              </div>
+              <div className="font-bebas text-6xl md:text-7xl text-primary neon-text">50+</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em] font-medium">Projects Delivered</div>
             </div>
-            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
-              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">4</div>
-              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Cities</div>
+            
+            <div className="group text-center space-y-4 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-110 transform-gpu animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Users className="w-8 h-8 text-primary" />
+              </div>
+              <div className="font-bebas text-6xl md:text-7xl text-primary neon-text">27.5K</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em] font-medium">Instagram Followers</div>
             </div>
-            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
-              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">24/7</div>
-              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Available</div>
+            
+            <div className="group text-center space-y-4 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-110 transform-gpu animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <TrendingUp className="w-8 h-8 text-primary" />
+              </div>
+              <div className="font-bebas text-6xl md:text-7xl text-primary neon-text">4</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em] font-medium">Major Cities</div>
             </div>
-            <div className="text-center space-y-3 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/40 transition-all duration-500 hover:scale-110 transform-gpu">
-              <div className="font-bebas text-5xl md:text-6xl text-primary neon-text">100%</div>
-              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em]">Quality</div>
+            
+            <div className="group text-center space-y-4 glass p-8 rounded-2xl border border-primary/20 hover:border-primary/60 transition-all duration-700 hover:scale-110 transform-gpu animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 border border-primary/40 mb-2 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
+                <Zap className="w-8 h-8 text-primary" />
+              </div>
+              <div className="font-bebas text-6xl md:text-7xl text-primary neon-text">100%</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-[0.2em] font-medium">Quality Assured</div>
+            </div>
+          </div>
+
+          {/* Why Choose Us */}
+          <div className="max-w-5xl mx-auto animate-fade-in-up">
+            <div className="text-center mb-12">
+              <div className="inline-block mb-4">
+                <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Why AKEEF STUDIOS</span>
+              </div>
+              <h3 className="font-bebas text-4xl md:text-6xl tracking-[0.15em] neon-text mb-4">
+                TRUSTED BY THE BEST
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-700 hover:scale-105 transform-gpu">
+                <Camera className="w-10 h-10 text-primary mb-4" />
+                <h4 className="font-bebas text-2xl tracking-wider mb-3 text-foreground">CINEMATIC QUALITY</h4>
+                <p className="text-muted-foreground/80 leading-relaxed text-sm">
+                  Professional-grade equipment and techniques that deliver broadcast-quality visuals every time
+                </p>
+              </div>
+
+              <div className="glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-700 hover:scale-105 transform-gpu">
+                <Film className="w-10 h-10 text-primary mb-4" />
+                <h4 className="font-bebas text-2xl tracking-wider mb-3 text-foreground">RAPID TURNAROUND</h4>
+                <p className="text-muted-foreground/80 leading-relaxed text-sm">
+                  Fast, efficient post-production without compromising quality — your content ready when you need it
+                </p>
+              </div>
+
+              <div className="glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-700 hover:scale-105 transform-gpu">
+                <Instagram className="w-10 h-10 text-primary mb-4" />
+                <h4 className="font-bebas text-2xl tracking-wider mb-3 text-foreground">SOCIAL OPTIMIZED</h4>
+                <p className="text-muted-foreground/80 leading-relaxed text-sm">
+                  Content crafted specifically for maximum engagement on Instagram, TikTok, and YouTube
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -152,41 +204,88 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Preview Section */}
+      {/* About Preview Section - Enhanced */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/3 left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] float-luxury"></div>
+        </div>
+        
         <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-5xl mx-auto text-center space-y-8 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">The Vision</span>
+          <div className="max-w-6xl mx-auto">
+            {/* Main Content */}
+            <div className="text-center space-y-8 animate-fade-in-up mb-16">
+              <div className="inline-block mb-4">
+                <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">The Vision</span>
+              </div>
+              <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text drip">
+                CREATING CULTURE
+              </h2>
+              <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-4xl mx-auto">
+                From Baltimore to Las Vegas, AKEEF STUDIOS brings cinematic excellence to every frame. 
+                Specializing in high-energy hip-hop music videos and visual storytelling that moves culture forward.
+              </p>
             </div>
-            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text drip">
-              CREATING CULTURE
-            </h2>
-            <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-4xl mx-auto">
-              From Baltimore to Las Vegas, AKEEF STUDIOS brings cinematic excellence to every frame. 
-              Specializing in high-energy hip-hop music videos and visual storytelling that moves culture forward.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-6">
-              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
-                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Baltimore</span>
+
+            {/* City Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 animate-fade-in">
+              <div className="group glass p-6 rounded-2xl border border-primary/20 hover:border-primary/60 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transition-all duration-700 hover:scale-110 transform-gpu text-center">
+                <div className="font-bebas text-3xl tracking-[0.2em] text-primary mb-2 neon-text">BALTIMORE</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Home Base</div>
               </div>
-              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
-                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Dallas</span>
+              <div className="group glass p-6 rounded-2xl border border-primary/20 hover:border-primary/60 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transition-all duration-700 hover:scale-110 transform-gpu text-center">
+                <div className="font-bebas text-3xl tracking-[0.2em] text-primary mb-2 neon-text">DALLAS</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Southern Hub</div>
               </div>
-              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
-                <span className="font-bebas text-lg tracking-[0.2em] text-primary">Vegas</span>
+              <div className="group glass p-6 rounded-2xl border border-primary/20 hover:border-primary/60 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transition-all duration-700 hover:scale-110 transform-gpu text-center">
+                <div className="font-bebas text-3xl tracking-[0.2em] text-primary mb-2 neon-text">VEGAS</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">West Coast</div>
               </div>
-              <div className="glass px-6 py-3 rounded-full border border-primary/20 hover:border-primary/50 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)] transition-all duration-500 hover:scale-110 transform-gpu">
-                <span className="font-bebas text-lg tracking-[0.2em] text-primary">DC</span>
+              <div className="group glass p-6 rounded-2xl border border-primary/20 hover:border-primary/60 hover:shadow-[0_0_40px_hsl(var(--primary)/0.3)] transition-all duration-700 hover:scale-110 transform-gpu text-center">
+                <div className="font-bebas text-3xl tracking-[0.2em] text-primary mb-2 neon-text">DC</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Capital Region</div>
               </div>
             </div>
-            <Link to="/about" className="inline-block">
-              <Button variant="neon" size="lg" className="mt-8 text-lg px-10 py-6 font-bebas tracking-[0.2em]">
-                DISCOVER THE STORY
-                <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
-              </Button>
-            </Link>
+
+            {/* Process Section */}
+            <div className="glass p-10 rounded-3xl border border-primary/30 mb-12 animate-fade-in-up">
+              <h3 className="font-bebas text-3xl md:text-5xl tracking-[0.15em] text-center mb-8 neon-text">
+                THE CREATIVE PROCESS
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bebas text-2xl text-primary">01</span>
+                  </div>
+                  <h4 className="font-bebas text-xl tracking-wider text-foreground">CONCEPT</h4>
+                  <p className="text-sm text-muted-foreground/80">We develop the creative vision and storyboard your ideas into reality</p>
+                </div>
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bebas text-2xl text-primary">02</span>
+                  </div>
+                  <h4 className="font-bebas text-xl tracking-wider text-foreground">PRODUCTION</h4>
+                  <p className="text-sm text-muted-foreground/80">Professional filming with cinema-grade equipment and experienced crew</p>
+                </div>
+                <div className="text-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-bebas text-2xl text-primary">03</span>
+                  </div>
+                  <h4 className="font-bebas text-xl tracking-wider text-foreground">POST</h4>
+                  <p className="text-sm text-muted-foreground/80">Expert editing, color grading, and effects to deliver your final masterpiece</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center animate-fade-in-up">
+              <Link to="/about" className="inline-block group">
+                <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
+                  DISCOVER THE STORY
+                  <ArrowRight className="ml-3 h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
