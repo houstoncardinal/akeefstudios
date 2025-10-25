@@ -5,7 +5,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-4 md:pt-20 md:pb-16">
       {/* Background Image with Revolutionary Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] ease-out hover:scale-105"
@@ -29,11 +29,11 @@ const Hero = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="container mx-auto px-6 relative z-10 text-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
         <div className="space-y-8 stagger-children">
           {/* Main Title with Revolutionary Effects */}
           <div className="relative inline-block mb-8 perspective-[1000px]">
-            <h1 className="font-bebas text-7xl md:text-[11rem] lg:text-[15rem] tracking-[0.15em] neon-text leading-none drip glitch transform-gpu transition-transform duration-700 hover:scale-105">
+            <h1 className="font-bebas text-5xl sm:text-7xl md:text-[11rem] lg:text-[15rem] tracking-[0.15em] neon-text leading-none drip glitch transform-gpu transition-transform duration-700 hover:scale-105">
               AKEEF STUDIOS
             </h1>
             <div className="absolute inset-0 blur-[80px] opacity-70 bg-gradient-to-r from-primary via-primary-glow to-primary pulse-glow"></div>
@@ -49,14 +49,14 @@ const Hero = () => {
           </div>
           
           {/* Tagline with Revolutionary Style */}
-          <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] text-foreground mt-8 transform-gpu transition-all duration-700 hover:scale-105">
+          <h2 className="font-bebas text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] text-foreground mt-8 transform-gpu transition-all duration-700 hover:scale-105">
             <span className="text-reveal bg-gradient-to-r from-foreground via-primary to-foreground bg-[length:200%_auto]">
               VISUALS THAT MOVE CULTURE
             </span>
           </h2>
           
           {/* Description with Artistic Spacing */}
-          <p className="text-xl md:text-2xl text-muted-foreground/90 max-w-4xl mx-auto leading-relaxed pt-6 font-light transform-gpu transition-all duration-500 hover:text-muted-foreground">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground/90 max-w-4xl mx-auto leading-relaxed pt-6 font-light transform-gpu transition-all duration-500 hover:text-muted-foreground px-4">
             Crafting <span className="text-primary font-semibold luxury-underline">cinematic music videos</span> and <span className="text-primary font-semibold luxury-underline">visual storytelling</span> across Baltimore, Dallas, Vegas, and DC
           </p>
 
