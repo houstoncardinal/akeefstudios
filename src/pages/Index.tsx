@@ -32,26 +32,47 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Video Grid */}
+          {/* Video Grid with Clickable Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {portfolioVideos.map((video, index) => (
-              <div 
+              <a
                 key={video.id}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu"
+                href={video.youtubeUrl || video.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu cursor-pointer"
                 style={{
                   animation: `fade-in 0.6s ease-out ${index * 0.1}s both`
                 }}
               >
-                <div className="aspect-video bg-gradient-to-br from-primary/20 via-background to-primary-glow/20 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent"></div>
-                  <div className="text-center p-8 relative z-10">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-primary/20 backdrop-blur-sm border-2 border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-500">
-                      <Play className="w-10 h-10 text-primary" fill="currentColor" />
+                {/* Thumbnail with Overlay */}
+                <div className="aspect-video relative overflow-hidden bg-background">
+                  <img 
+                    src={video.thumbnail} 
+                    alt={video.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    onError={(e) => {
+                      e.currentTarget.src = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                  
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-20 h-20 rounded-full bg-primary/90 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center group-hover:scale-125 group-hover:bg-primary transition-all duration-500 shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
+                      <Play className="w-10 h-10 text-white ml-1" fill="currentColor" />
                     </div>
                   </div>
+
+                  {/* Watch Now Label */}
+                  <div className="absolute top-4 right-4 glass px-4 py-2 rounded-full border border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-xs text-primary font-medium uppercase tracking-wider">Watch Now</span>
+                  </div>
                 </div>
+
+                {/* Video Info */}
                 <div className="p-6 space-y-2">
-                  <h3 className="font-bebas text-xl tracking-wider text-foreground line-clamp-2">
+                  <h3 className="font-bebas text-xl tracking-wider text-foreground line-clamp-2 group-hover:text-primary transition-colors">
                     {video.title}
                   </h3>
                   <p className="text-muted-foreground text-sm">{video.artist}</p>
@@ -60,7 +81,7 @@ const Index = () => {
                     <span className="text-xs text-primary font-medium uppercase tracking-wider">{video.role}</span>
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 
@@ -107,7 +128,7 @@ const Index = () => {
           </div>
 
           <InstagramGrid 
-            posts={portfolioVideos.slice(0, 8).map(video => ({
+            posts={portfolioVideos.slice(0, 6).map(video => ({
               id: video.id,
               url: video.instagramUrl || '',
               title: video.title

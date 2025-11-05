@@ -1,73 +1,174 @@
-# Welcome to your Lovable project
+# AKEEF STUDIOS - Official Website
 
-## Project info
+A stunning, cinematic portfolio website for AKEEF STUDIOS - a professional video production company specializing in music videos, commercials, and visual storytelling.
 
-**URL**: https://lovable.dev/projects/3e06356a-91d0-4eeb-9c45-fa26a14a22c8
+## 🎬 About
 
-## How can I edit this code?
+AKEEF STUDIOS creates high-energy, cinematic content for hip-hop artists and brands across Baltimore, Dallas, Las Vegas, and DC. Featured work includes official music videos for Real Boston Richey, YoungBoy Never Broke Again, and more.
 
-There are several ways of editing your application.
+**Stats:**
+- 50+ Projects Delivered
+- 27.5K Instagram Followers
+- 4 Major Cities Served
+- 100% Quality Assured
 
-**Use Lovable**
+## ✨ Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/3e06356a-91d0-4eeb-9c45-fa26a14a22c8) and start prompting.
+- **Video Portfolio**: Clickable video cards with YouTube integration and thumbnails
+- **Instagram Feed**: Live feed from @akeefstudios
+- **Responsive Design**: Beautiful on all devices
+- **Modern Animations**: Glass morphism, neon effects, smooth transitions
+- **SEO Optimized**: Meta tags, semantic HTML, performance optimized
+- **Professional CTAs**: Strategic calls-to-action throughout
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Quick Start
 
-**Use your preferred IDE**
+### Before Launch (IMPORTANT!)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. **Update Your Videos**
+   - Open `src/data/portfolio.ts`
+   - Replace placeholder video IDs with your actual YouTube video IDs
+   - See `HOW_TO_UPDATE_VIDEOS.md` for detailed instructions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. **Verify Social Links**
+   - YouTube: `https://www.youtube.com/@akeefstudios`
+   - Instagram: `https://instagram.com/akeefstudios`
+   - Contact email in footer
 
-Follow these steps:
+3. **Review Checklist**
+   - See `DEPLOYMENT_CHECKLIST.md` for complete pre-launch checklist
+
+### Development
+
+
+
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
+# Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 📁 Project Structure
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+src/
+├── components/          # React components
+│   ├── Hero.tsx        # Main hero section
+│   ├── Navigation.tsx  # Navigation bar
+│   ├── Footer.tsx      # Site footer
+│   ├── InstagramGrid.tsx    # Instagram feed
+│   └── ui/             # UI components (buttons, cards, etc.)
+├── pages/              # Page components
+│   ├── Index.tsx       # Homepage
+│   ├── Portfolio.tsx   # Full portfolio page
+│   ├── About.tsx       # About page
+│   └── Contact.tsx     # Contact page
+├── data/
+│   └── portfolio.ts    # Video portfolio data (UPDATE THIS!)
+├── assets/             # Images and media files
+└── index.css          # Global styles & animations
+```
 
-**Use GitHub Codespaces**
+## 🎨 Tech Stack
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
 
-This project is built with:
+- **Vite** - Build tool
+- **TypeScript** - Type safety
+- **React** - UI framework
+- **Tailwind CSS** - Styling
+- **shadcn-ui** - Component library
+- **Lucide React** - Icons
+- **React Router** - Navigation
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🎯 Pages
 
-## How can I deploy this project?
+1. **Homepage** (`/`)
+   - Hero section with cinematic effects
+   - Featured music videos with clickable cards
+   - Instagram feed integration
+   - Stats & social proof
+   - Services overview
 
-Simply open [Lovable](https://lovable.dev/projects/3e06356a-91d0-4eeb-9c45-fa26a14a22c8) and click on Share -> Publish.
+2. **Portfolio** (`/portfolio`)
+   - Complete video gallery
+   - Filterable content
+   - Direct video links
 
-## Can I connect a custom domain to my Lovable project?
+3. **About** (`/about`)
+   - Studio story & vision
+   - Creative process
+   - Service areas
 
-Yes, you can!
+4. **Contact** (`/contact`)
+   - Contact information
+   - Social media links
+   - Location details
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🎬 Services
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Music Videos**: Cinematic storytelling for artists
+- **Commercials**: Brand content that drives engagement
+- **Post Production**: Expert editing, color grading, and VFX
+
+## 📍 Service Areas
+
+- Baltimore, MD (Home Base)
+- Dallas, TX
+- Las Vegas, NV
+- Washington, DC
+
+## 🚀 Deployment
+
+### Using Lovable (Recommended)
+
+
+
+1. Open [Lovable Project](https://lovable.dev/projects/3e06356a-91d0-4eeb-9c45-fa26a14a22c8)
+2. Click Share → Publish
+3. Click "Update" to push changes live
+
+### Custom Domain
+
+To connect a custom domain:
+1. Navigate to Project > Settings > Domains
+2. Click "Connect Domain"
+3. Follow the setup instructions
+
+Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## 📞 Social Media
+
+- **Instagram**: [@akeefstudios](https://instagram.com/akeefstudios) - 27.5K followers
+- **YouTube**: [@akeefstudios](https://www.youtube.com/@akeefstudios)
+
+## 📋 Important Files
+
+- `DEPLOYMENT_CHECKLIST.md` - Complete pre-launch checklist
+- `HOW_TO_UPDATE_VIDEOS.md` - Step-by-step guide for updating videos
+- `INSTAGRAM_SETUP.md` - Instagram integration instructions
+
+## 🎥 Featured Artists
+
+- Real Boston Richey
+- YoungBoy Never Broke Again
+- NBA YoungBoy
+- Birdman
+- And many more...
+
+## 📄 License
+
+© 2024 AKEEF STUDIOS. All rights reserved.
+
+---
+
+**Project URL**: https://lovable.dev/projects/3e06356a-91d0-4eeb-9c45-fa26a14a22c8
+
+**Built with Lovable** ❤️ | **Powered by React + Vite + Tailwind**
