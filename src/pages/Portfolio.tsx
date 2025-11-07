@@ -21,63 +21,63 @@ const Portfolio = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] float-luxury"></div>
-          <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-primary-glow/10 rounded-full blur-[100px] float-luxury" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-primary/10 rounded-full blur-[120px] float-luxury"></div>
+          <div className="absolute top-1/2 right-1/4 w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] bg-primary-glow/10 rounded-full blur-[100px] float-luxury" style={{ animationDelay: '2s' }}></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto space-y-6 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Featured Work</span>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6 animate-fade-in-up">
+            <div className="inline-block mb-2 md:mb-4">
+              <span className="text-xs sm:text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Featured Work</span>
             </div>
-            <h1 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-[0.15em] neon-text mb-6 drip">
+            <h1 className="font-bebas text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.15em] neon-text mb-4 md:mb-6 drip">
               PORTFOLIO
             </h1>
-            <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 leading-relaxed max-w-3xl mx-auto px-4">
               A curated collection of cinematic visuals that define culture and push creative boundaries — from Baltimore to Vegas
             </p>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto pt-8">
-              <div className="glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
-                <div className="font-bebas text-4xl text-primary mb-1">50+</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">Projects</div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-2xl mx-auto pt-6 md:pt-8">
+              <div className="glass p-4 sm:p-5 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
+                <div className="font-bebas text-2xl sm:text-3xl md:text-4xl text-primary mb-1">50+</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Projects</div>
               </div>
-              <div className="glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
-                <div className="font-bebas text-4xl text-primary mb-1">27.5K</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">Followers</div>
+              <div className="glass p-4 sm:p-5 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
+                <div className="font-bebas text-2xl sm:text-3xl md:text-4xl text-primary mb-1">27.5K</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Followers</div>
               </div>
-              <div className="glass p-6 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
-                <div className="font-bebas text-4xl text-primary mb-1">4</div>
-                <div className="text-xs text-muted-foreground uppercase tracking-wider">Cities</div>
+              <div className="glass p-4 sm:p-5 md:p-6 rounded-xl md:rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105">
+                <div className="font-bebas text-2xl sm:text-3xl md:text-4xl text-primary mb-1">4</div>
+                <div className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wider">Cities</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <main className="py-20">
-        <div className="container mx-auto px-6">
+      <main className="py-12 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
           {/* Filter Section */}
-          <div className="mb-16 animate-fade-in">
-            <div className="flex flex-wrap gap-4 justify-center">
+          <div className="mb-12 md:mb-16 animate-fade-in">
+            <div className="flex flex-wrap gap-3 md:gap-4 justify-center">
               {categories.map((category) => {
                 const Icon = category.icon;
                 return (
                   <button
                     key={category.id}
                     onClick={() => setActiveFilter(category.id)}
-                    className={`group px-8 py-4 glass rounded-2xl text-sm font-medium transition-all duration-500 flex items-center gap-3 ${
+                    className={`group px-4 sm:px-6 md:px-8 py-3 md:py-4 glass rounded-xl md:rounded-2xl text-xs sm:text-sm font-medium transition-all duration-500 flex items-center gap-2 md:gap-3 ${
                       activeFilter === category.id
                         ? "bg-primary/20 text-primary border-primary/60 scale-105 shadow-[0_0_30px_hsl(var(--primary)/0.3)]"
                         : "hover:bg-primary/10 hover:text-primary hover:border-primary/40 hover:scale-105"
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span className="font-bebas tracking-wider">{category.label}</span>
+                    <Icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                    <span className="font-bebas tracking-wider text-sm sm:text-base">{category.label}</span>
                   </button>
                 );
               })}
@@ -154,62 +154,62 @@ const Portfolio = () => {
           </div>
 
           {/* Process Section */}
-          <div className="glass p-12 rounded-3xl border border-primary/30 mb-20 animate-fade-in-up">
-            <div className="text-center mb-12">
-              <h3 className="font-bebas text-4xl md:text-5xl tracking-[0.15em] neon-text mb-4">
+          <div className="glass p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border border-primary/30 mb-12 md:mb-20 animate-fade-in-up">
+            <div className="text-center mb-8 md:mb-12">
+              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] neon-text mb-3 md:mb-4">
                 THE PROCESS
               </h3>
-              <p className="text-muted-foreground/80 max-w-2xl mx-auto">
+              <p className="text-muted-foreground/80 max-w-2xl mx-auto text-sm sm:text-base px-4">
                 From concept to completion — every frame crafted with precision
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center space-y-4 group hover:scale-105 transition-all duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-500">
-                  <span className="font-bebas text-3xl text-primary">01</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center space-y-3 md:space-y-4 group hover:scale-105 transition-all duration-500">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:rotate-12 transition-all duration-500">
+                  <span className="font-bebas text-2xl md:text-3xl text-primary">01</span>
                 </div>
-                <h4 className="font-bebas text-2xl tracking-wider text-foreground">CONCEPT</h4>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">Brainstorm and develop creative direction tailored to your vision</p>
+                <h4 className="font-bebas text-xl md:text-2xl tracking-wider text-foreground">CONCEPT</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed px-2">Brainstorm and develop creative direction tailored to your vision</p>
               </div>
 
-              <div className="text-center space-y-4 group hover:scale-105 transition-all duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-500">
-                  <span className="font-bebas text-3xl text-primary">02</span>
+              <div className="text-center space-y-3 md:space-y-4 group hover:scale-105 transition-all duration-500">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:rotate-12 transition-all duration-500">
+                  <span className="font-bebas text-2xl md:text-3xl text-primary">02</span>
                 </div>
-                <h4 className="font-bebas text-2xl tracking-wider text-foreground">PRE-PRODUCTION</h4>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">Storyboarding, location scouting, and detailed planning</p>
+                <h4 className="font-bebas text-xl md:text-2xl tracking-wider text-foreground">PRE-PRODUCTION</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed px-2">Storyboarding, location scouting, and detailed planning</p>
               </div>
 
-              <div className="text-center space-y-4 group hover:scale-105 transition-all duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-500">
-                  <span className="font-bebas text-3xl text-primary">03</span>
+              <div className="text-center space-y-3 md:space-y-4 group hover:scale-105 transition-all duration-500">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:rotate-12 transition-all duration-500">
+                  <span className="font-bebas text-2xl md:text-3xl text-primary">03</span>
                 </div>
-                <h4 className="font-bebas text-2xl tracking-wider text-foreground">PRODUCTION</h4>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">Professional filming with cinema-grade equipment</p>
+                <h4 className="font-bebas text-xl md:text-2xl tracking-wider text-foreground">PRODUCTION</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed px-2">Professional filming with cinema-grade equipment</p>
               </div>
 
-              <div className="text-center space-y-4 group hover:scale-105 transition-all duration-500">
-                <div className="w-20 h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-500">
-                  <span className="font-bebas text-3xl text-primary">04</span>
+              <div className="text-center space-y-3 md:space-y-4 group hover:scale-105 transition-all duration-500">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:rotate-12 transition-all duration-500">
+                  <span className="font-bebas text-2xl md:text-3xl text-primary">04</span>
                 </div>
-                <h4 className="font-bebas text-2xl tracking-wider text-foreground">POST</h4>
-                <p className="text-sm text-muted-foreground/80 leading-relaxed">Expert editing, color grading, and final delivery</p>
+                <h4 className="font-bebas text-xl md:text-2xl tracking-wider text-foreground">POST</h4>
+                <p className="text-xs sm:text-sm text-muted-foreground/80 leading-relaxed px-2">Expert editing, color grading, and final delivery</p>
               </div>
             </div>
           </div>
 
           {/* CTA Section */}
-          <div className="text-center animate-fade-in-up">
-            <div className="glass p-12 rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-700 max-w-3xl mx-auto">
-              <h3 className="font-bebas text-4xl md:text-5xl tracking-[0.15em] neon-text mb-6">
+          <div className="text-center animate-fade-in-up px-4">
+            <div className="glass p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-700 max-w-3xl mx-auto">
+              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] neon-text mb-4 md:mb-6">
                 READY TO CREATE?
               </h3>
-              <p className="text-muted-foreground/90 mb-8 text-lg leading-relaxed">
+              <p className="text-muted-foreground/90 mb-6 md:mb-8 text-base sm:text-lg leading-relaxed">
                 Let's turn your vision into a cinematic masterpiece
               </p>
               <Link to="/contact" className="group inline-block">
-                <Button variant="hero" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
+                <Button variant="hero" size="lg" className="text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7 font-bebas tracking-[0.2em]">
                   BOOK YOUR SHOOT
                 </Button>
               </Link>

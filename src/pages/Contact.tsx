@@ -46,37 +46,37 @@ const Contact = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 overflow-hidden">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-12 md:pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] float-luxury"></div>
+          <div className="absolute top-1/2 left-1/3 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-primary/10 rounded-full blur-[120px] float-luxury"></div>
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center max-w-4xl mx-auto space-y-6 animate-fade-in-up">
-            <div className="inline-block mb-4">
-              <span className="text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Let's Work Together</span>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-4xl mx-auto space-y-4 md:space-y-6 animate-fade-in-up">
+            <div className="inline-block mb-2 md:mb-4">
+              <span className="text-xs sm:text-sm text-primary/80 tracking-[0.3em] uppercase font-medium">Let's Work Together</span>
             </div>
-            <h1 className="font-bebas text-6xl md:text-8xl lg:text-9xl tracking-[0.15em] neon-text mb-6 drip">
+            <h1 className="font-bebas text-5xl sm:text-6xl md:text-8xl lg:text-9xl tracking-[0.15em] neon-text mb-4 md:mb-6 drip">
               CONTACT
             </h1>
-            <p className="text-xl text-muted-foreground/90 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground/90 leading-relaxed max-w-3xl mx-auto px-4">
               Ready to bring your vision to life? Book your session with AKEEF STUDIOS — where cinematic dreams become reality
             </p>
           </div>
         </div>
       </section>
 
-      <main className="pb-20">
-        <div className="container mx-auto px-6 max-w-7xl">
+      <main className="pb-12 md:pb-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
             {/* Contact Form */}
-            <div className="glass p-10 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700 animate-fade-in">
-              <h2 className="font-bebas text-3xl tracking-[0.15em] mb-3 neon-text">
+            <div className="glass p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700 animate-fade-in">
+              <h2 className="font-bebas text-2xl sm:text-3xl tracking-[0.15em] mb-2 md:mb-3 neon-text">
                 BOOK A SHOOT
               </h2>
-              <p className="text-muted-foreground/80 mb-8">Fill out the form below and I'll get back to you within 24-48 hours</p>
+              <p className="text-muted-foreground/80 mb-6 md:mb-8 text-sm sm:text-base">Fill out the form below and I'll get back to you within 24-48 hours</p>
               
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -155,10 +155,10 @@ const Contact = () => {
             </div>
 
             {/* Contact Info & Details */}
-            <div className="space-y-6 animate-fade-in">
+            <div className="space-y-4 md:space-y-6 animate-fade-in">
               {/* Contact Methods */}
-              <div className="glass p-10 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700">
-                <h2 className="font-bebas text-3xl tracking-[0.15em] mb-6 neon-text">
+              <div className="glass p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700">
+                <h2 className="font-bebas text-2xl sm:text-3xl tracking-[0.15em] mb-4 md:mb-6 neon-text">
                   GET IN TOUCH
                 </h2>
                 
@@ -218,9 +218,9 @@ const Contact = () => {
               </div>
 
               {/* What to Expect */}
-              <div className="glass p-10 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700">
-                <h3 className="font-bebas text-2xl tracking-[0.15em] mb-6 text-foreground flex items-center gap-3">
-                  <CheckCircle2 className="w-6 h-6 text-primary" />
+              <div className="glass p-6 sm:p-8 md:p-10 rounded-2xl md:rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-700">
+                <h3 className="font-bebas text-xl sm:text-2xl tracking-[0.15em] mb-4 md:mb-6 text-foreground flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   WHAT TO EXPECT
                 </h3>
                 <ul className="space-y-4">
@@ -258,17 +258,17 @@ const Contact = () => {
           </div>
 
           {/* Service Areas */}
-          <div className="glass p-12 rounded-3xl border border-primary/30 animate-fade-in-up">
-            <div className="text-center mb-10">
-              <h3 className="font-bebas text-4xl md:text-5xl tracking-[0.15em] neon-text mb-4">
+          <div className="glass p-6 sm:p-8 md:p-12 rounded-2xl md:rounded-3xl border border-primary/30 animate-fade-in-up">
+            <div className="text-center mb-6 md:mb-10">
+              <h3 className="font-bebas text-3xl sm:text-4xl md:text-5xl tracking-[0.15em] neon-text mb-3 md:mb-4">
                 SERVICE AREAS
               </h3>
-              <p className="text-muted-foreground/80 max-w-2xl mx-auto">
+              <p className="text-muted-foreground/80 max-w-2xl mx-auto text-sm sm:text-base px-4">
                 Professional video production across major cities
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               <div className="text-center group hover:scale-105 transition-all duration-500">
                 <div className="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary/40 flex items-center justify-center mx-auto mb-4 group-hover:rotate-12 transition-all duration-500">
                   <MapPin className="w-8 h-8 text-primary" />

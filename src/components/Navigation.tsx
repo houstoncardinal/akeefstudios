@@ -16,6 +16,11 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Close mobile menu when route changes
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Portfolio", path: "/portfolio" },
@@ -32,7 +37,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Revolutionary Logo */}
-          <Link to="/" className="font-bebas text-4xl tracking-[0.25em] hover:text-primary transition-all duration-700 hover:scale-110 neon-text drip transform-gpu hover:-rotate-2 hover:shadow-[0_0_40px_hsl(var(--primary))]">
+          <Link to="/" className="font-bebas text-2xl sm:text-3xl md:text-4xl tracking-[0.25em] hover:text-primary transition-all duration-700 hover:scale-110 neon-text drip transform-gpu hover:-rotate-2 hover:shadow-[0_0_40px_hsl(var(--primary))]">
             AKEEF STUDIOS
           </Link>
 
@@ -59,8 +64,9 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground hover:text-primary transition-colors"
+            className="md:hidden text-foreground hover:text-primary transition-colors z-50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -68,16 +74,16 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-4 animate-fade-in">
+          <div className="md:hidden mt-6 pb-6 space-y-4 animate-fade-in border-t border-primary/20 pt-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`block font-medium tracking-wide transition-all hover:text-primary py-2 ${
+                className={`block font-bebas text-xl tracking-wide transition-all hover:text-primary py-3 px-2 rounded-lg ${
                   location.pathname === link.path
-                    ? "text-primary"
-                    : "text-foreground"
+                    ? "text-primary bg-primary/10"
+                    : "text-foreground hover:bg-primary/5"
                 }`}
               >
                 {link.name}
