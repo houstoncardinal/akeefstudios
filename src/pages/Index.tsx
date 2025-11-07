@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import InstagramGrid from "@/components/InstagramGrid";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -37,7 +36,7 @@ const Index = () => {
             {portfolioVideos.map((video, index) => (
               <a
                 key={video.id}
-                href={video.youtubeUrl || video.instagramUrl}
+                href={video.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu cursor-pointer"
@@ -49,11 +48,9 @@ const Index = () => {
                 <div className="aspect-video relative overflow-hidden bg-background">
                   <img 
                     src={video.thumbnail} 
-                    alt={video.title}
+                    alt={`${video.title} - ${video.artist} music video directed by Akeef Studios`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop';
-                    }}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                   
@@ -66,7 +63,7 @@ const Index = () => {
 
                   {/* Watch Now Label */}
                   <div className="absolute top-4 right-4 glass px-4 py-2 rounded-full border border-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-xs text-primary font-medium uppercase tracking-wider">Watch Now</span>
+                    <span className="text-xs text-primary font-medium uppercase tracking-wider">Watch on YouTube</span>
                   </div>
                 </div>
 
@@ -108,51 +105,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Latest Instagram Content Section */}
+      {/* Instagram Follow Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,hsl(var(--primary)/0.1),transparent_50%)]"></div>
         
         <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-16 animate-fade-in-up">
-            <div className="inline-flex items-center gap-3 mb-6 glass px-6 py-3 rounded-full border border-primary/30 hover:border-primary/50 hover:scale-105 transition-all duration-500">
+          <div className="glass p-16 rounded-3xl border border-primary/30 hover:border-primary/50 transition-all duration-700 max-w-4xl mx-auto text-center animate-fade-in-up">
+            <div className="inline-flex items-center gap-3 mb-6 glass px-6 py-3 rounded-full border border-primary/30">
               <Instagram className="w-5 h-5 text-primary animate-pulse" />
-              <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Live From Instagram</span>
+              <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">27.5K Followers</span>
             </div>
-            <h2 className="font-bebas text-5xl md:text-7xl lg:text-8xl tracking-[0.15em] neon-text mb-4 drip">
-              LATEST DROPS
+            <h2 className="font-bebas text-5xl md:text-7xl tracking-[0.15em] neon-text mb-6 drip">
+              DAILY CONTENT ON INSTAGRAM
             </h2>
-            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed">
-              Fresh content straight from <span className="text-primary font-semibold">@akeefstudios</span> — 27.5K followers watching daily
+            <p className="text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed mb-10">
+              Behind-the-scenes, exclusive clips, and fresh visuals from <span className="text-primary font-semibold">@akeefstudios</span>
             </p>
-          </div>
-
-          <InstagramGrid 
-            posts={portfolioVideos.slice(0, 6).map(video => ({
-              id: video.id,
-              url: video.instagramUrl || '',
-              title: video.title
-            }))}
-          />
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up">
             <a 
               href="https://instagram.com/akeefstudios" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group"
+              className="group inline-block"
             >
-              <Button variant="neon" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em]">
+              <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
                 <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
-                FOLLOW @AKEEFSTUDIOS
+                FOLLOW ON INSTAGRAM
               </Button>
             </a>
-            <Link to="/portfolio" className="group">
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em] border-primary/40 hover:border-primary hover:bg-primary/10">
-                VIEW FULL PORTFOLIO
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
-            </Link>
           </div>
         </div>
       </section>

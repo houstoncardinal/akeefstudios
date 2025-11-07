@@ -1,9 +1,8 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import InstagramGrid from "@/components/InstagramGrid";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Instagram, TrendingUp, Award, Film } from "lucide-react";
+import { Instagram, TrendingUp, Award, Film, Play } from "lucide-react";
 import { portfolioVideos } from "@/data/portfolio";
 import { useState } from "react";
 
@@ -85,30 +84,61 @@ const Portfolio = () => {
             </div>
           </div>
 
-          {/* Featured Instagram Content */}
+          {/* Featured Work Section */}
           <div className="mb-20 animate-fade-in-up">
             <div className="text-center mb-12">
               <div className="inline-flex items-center gap-3 mb-4 glass px-6 py-3 rounded-full border border-primary/30">
-                <Instagram className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Latest from Instagram</span>
+                <Film className="w-5 h-5 text-primary" />
+                <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium">Featured Projects</span>
               </div>
               <h2 className="font-bebas text-4xl md:text-6xl tracking-[0.15em] neon-text mb-4">
-                RECENT WORK
+                MUSIC VIDEOS
               </h2>
               <p className="text-muted-foreground/80 max-w-2xl mx-auto">
-                Follow <a href="https://instagram.com/akeefstudios" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-glow transition-colors">@akeefstudios</a> for daily drops
+                Watch the latest work on <a href="https://youtube.com/@akeefstudios" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-glow transition-colors">YouTube</a>
               </p>
             </div>
 
-            <InstagramGrid 
-              posts={portfolioVideos.map(video => ({
-                id: video.id,
-                url: video.instagramUrl || '',
-                title: video.title
-              }))}
-            />
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              {portfolioVideos.map((video) => (
+                <a
+                  key={video.id}
+                  href={video.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu cursor-pointer"
+                >
+                  <div className="aspect-video relative overflow-hidden bg-background">
+                    <img 
+                      src={video.thumbnail} 
+                      alt={`${video.title} - ${video.artist}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                    
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 rounded-full bg-primary/90 backdrop-blur-sm border-2 border-white/20 flex items-center justify-center group-hover:scale-125 group-hover:bg-primary transition-all duration-500 shadow-[0_0_30px_hsl(var(--primary)/0.5)]">
+                        <Play className="w-10 h-10 text-white ml-1" fill="currentColor" />
+                      </div>
+                    </div>
+                  </div>
 
-            <div className="text-center mt-12">
+                  <div className="p-6 space-y-2">
+                    <h3 className="font-bebas text-xl tracking-wider text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                      {video.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">{video.artist}</p>
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="text-xs text-muted-foreground/70">{video.city} • {video.year}</span>
+                      <span className="text-xs text-primary font-medium uppercase tracking-wider">{video.role}</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="text-center">
               <a 
                 href="https://instagram.com/akeefstudios" 
                 target="_blank" 
@@ -117,7 +147,7 @@ const Portfolio = () => {
               >
                 <Button variant="neon" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em]">
                   <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
-                  FOLLOW FOR MORE
+                  FOLLOW ON INSTAGRAM
                 </Button>
               </a>
             </div>

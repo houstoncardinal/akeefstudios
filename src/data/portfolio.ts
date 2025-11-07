@@ -44,7 +44,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2024",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=IXJTaHySW8I",
-    instagramUrl: "https://www.instagram.com/p/C_123/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "Baltimore"
   },
   {
@@ -55,7 +55,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2024",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=ITWRtFhoh40",
-    instagramUrl: "https://www.instagram.com/p/C_456/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "Dallas"
   },
   {
@@ -66,7 +66,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2025",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=-rjFAQGkIqc",
-    instagramUrl: "https://www.instagram.com/p/C_789/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "Vegas"
   },
   {
@@ -77,7 +77,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2024",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=UYp9gqmkAMo",
-    instagramUrl: "https://www.instagram.com/p/C_012/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "DC"
   },
   {
@@ -88,7 +88,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2024",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=uk6VNPWWXqM",
-    instagramUrl: "https://www.instagram.com/p/C_345/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "Baltimore"
   },
   {
@@ -99,7 +99,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     year: "2024",
     role: "Director & Editor",
     youtubeUrl: "https://www.youtube.com/watch?v=Eb8rXCzJMUc",
-    instagramUrl: "https://www.instagram.com/p/C_678/",
+    instagramUrl: "https://www.instagram.com/akeefstudios/",
     city: "Vegas"
   }
 ];
