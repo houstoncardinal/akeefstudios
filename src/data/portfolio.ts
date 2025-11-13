@@ -82,7 +82,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 5,
-    thumbnail: "https://i.ytimg.com/vi/uk6VNPWWXqM/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/uk6VNPWWXqM/hqdefault.jpg",
     title: "NBA YoungBoy x Birdman x Herm Tha Black Sheep",
     artist: "NBA YoungBoy, Birdman, Herm Tha Black Sheep",
     year: "2024",
