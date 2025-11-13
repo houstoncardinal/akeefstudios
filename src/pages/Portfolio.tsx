@@ -111,9 +111,11 @@ const Portfolio = () => {
                   <div className="aspect-video relative overflow-hidden bg-background">
                     <img 
                       src={video.thumbnail} 
-                      alt={`${video.title} - ${video.artist}`}
+                      alt={`${video.title} - ${video.artist} music video directed by Akeef Studios`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      loading="lazy"
+                      loading={video.id <= 3 ? "eager" : "lazy"}
+                      decoding="async"
+                      fetchPriority={video.id <= 3 ? "high" : "auto"}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                     

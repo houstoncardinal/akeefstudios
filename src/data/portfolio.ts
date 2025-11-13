@@ -38,7 +38,7 @@ export interface PortfolioVideo {
 export const portfolioVideos: PortfolioVideo[] = [
   {
     id: 1,
-    thumbnail: "https://img.youtube.com/vi/IXJTaHySW8I/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/IXJTaHySW8I/maxresdefault.jpg",
     title: "Real Boston Richey - Help Me",
     artist: "Real Boston Richey",
     year: "2024",
@@ -49,7 +49,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 2,
-    thumbnail: "https://img.youtube.com/vi/ITWRtFhoh40/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/ITWRtFhoh40/maxresdefault.jpg",
     title: "Real Boston Richey - Get In There ft. GloRilla",
     artist: "Real Boston Richey ft. GloRilla",
     year: "2024",
@@ -60,7 +60,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 3,
-    thumbnail: "https://img.youtube.com/vi/-rjFAQGkIqc/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/-rjFAQGkIqc/maxresdefault.jpg",
     title: "Real Boston Richey - One Hit Wonder",
     artist: "Real Boston Richey",
     year: "2025",
@@ -71,7 +71,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 4,
-    thumbnail: "https://img.youtube.com/vi/UYp9gqmkAMo/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/UYp9gqmkAMo/maxresdefault.jpg",
     title: "YoungBoy Never Broke Again - I Forgive Them",
     artist: "YoungBoy Never Broke Again",
     year: "2024",
@@ -82,7 +82,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 5,
-    thumbnail: "https://img.youtube.com/vi/uk6VNPWWXqM/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/uk6VNPWWXqM/maxresdefault.jpg",
     title: "NBA YoungBoy x Birdman x Herm Tha Black Sheep",
     artist: "NBA YoungBoy, Birdman, Herm Tha Black Sheep",
     year: "2024",
@@ -93,7 +93,7 @@ export const portfolioVideos: PortfolioVideo[] = [
   },
   {
     id: 6,
-    thumbnail: "https://img.youtube.com/vi/Eb8rXCzJMUc/maxresdefault.jpg",
+    thumbnail: "https://i.ytimg.com/vi/Eb8rXCzJMUc/maxresdefault.jpg",
     title: "YoungBoy Never Broke Again - NUSSIE FREESTYLE",
     artist: "YoungBoy Never Broke Again",
     year: "2024",
