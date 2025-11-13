@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Instagram, TrendingUp, Award, Film, Play } from "lucide-react";
 import { portfolioVideos } from "@/data/portfolio";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { useState } from "react";
 
 const Portfolio = () => {
@@ -109,13 +110,12 @@ const Portfolio = () => {
                   className="group relative overflow-hidden rounded-2xl bg-card/50 border border-border/50 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_hsl(var(--primary)/0.3)] transform-gpu cursor-pointer"
                 >
                   <div className="aspect-video relative overflow-hidden bg-background">
-                    <img 
-                      src={video.thumbnail} 
+                    <OptimizedImage
+                      src={video.thumbnail}
                       alt={`${video.title} - ${video.artist} music video directed by Akeef Studios`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       loading={video.id <= 3 ? "eager" : "lazy"}
-                      decoding="async"
-                      fetchPriority={video.id <= 3 ? "high" : "auto"}
+                      priority={video.id <= 3}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                     

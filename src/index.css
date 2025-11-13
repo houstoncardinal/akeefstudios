@@ -326,6 +326,12 @@ All colors MUST be HSL.
     will-change: transform;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .float-luxury {
+      animation: none;
+    }
+  }
+
   /* Pulse glow */
   @keyframes pulse-glow {
     0%, 100% { 
