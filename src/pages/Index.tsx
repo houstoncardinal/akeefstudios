@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Play, Award, Users, TrendingUp, Zap, Camera, Film, Youtube } from "lucide-react";
 import { portfolioVideos } from "@/data/portfolio";
+import { OptimizedImage } from "@/components/OptimizedImage";
+import { memo } from "react";
 
 const Index = () => {
   return (
@@ -50,7 +52,9 @@ const Index = () => {
                     src={video.thumbnail} 
                     alt={`${video.title} - ${video.artist} music video directed by Akeef Studios`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
+                    loading={index < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={index < 3 ? "high" : "auto"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                   
