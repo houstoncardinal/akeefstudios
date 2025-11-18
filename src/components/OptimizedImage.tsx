@@ -54,7 +54,6 @@ export const OptimizedImage = ({
           onLoad={() => setIsLoaded(true)}
           onError={() => setHasError(true)}
           decoding="async"
-          fetchPriority={priority ? "high" : "auto"}
         />
       )}
       {hasError && (
