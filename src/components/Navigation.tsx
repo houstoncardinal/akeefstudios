@@ -37,7 +37,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           {/* Revolutionary Logo */}
-          <Link to="/" className="font-bebas text-2xl sm:text-3xl md:text-4xl tracking-[0.25em] hover:text-primary transition-all duration-700 hover:scale-110 neon-text drip transform-gpu hover:-rotate-2 hover:shadow-[0_0_40px_hsl(var(--primary))]">
+          <Link to="/" className="font-bebas text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] hover:text-primary transition-all duration-700 hover:scale-105 neon-text drip transform-gpu hover:-rotate-2 hover:shadow-[0_0_40px_hsl(var(--primary))] whitespace-nowrap">
             AKEEF STUDIOS
           </Link>
 

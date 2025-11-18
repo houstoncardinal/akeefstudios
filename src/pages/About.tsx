@@ -130,8 +130,8 @@ const About = () => {
             <h2 className="font-bebas text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-wider mb-6 md:mb-8">
               LET'S CREATE SOMETHING LEGENDARY
             </h2>
-            <Link to="/contact">
-              <Button variant="hero" size="lg" className="text-base sm:text-lg px-8 sm:px-12 py-6 sm:py-7">
+            <Link to="/contact" className="inline-block w-full sm:w-auto">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
                 Start Your Project
               </Button>
             </Link>

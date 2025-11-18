@@ -52,15 +52,15 @@ const Hero = () => {
           </p>
 
           {/* Optimized CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-10 md:pt-12">
-            <Link to="/portfolio" className="group">
-              <Button variant="neon" size="lg" className="w-full sm:w-auto text-base md:text-lg px-10 md:px-12 py-6 md:py-7 font-bebas tracking-[0.25em] transform-gpu transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.6)] hover:-translate-y-1">
-                <Play className="mr-2 md:mr-3 h-5 w-5 md:h-6 md:w-6 group-hover:scale-110 transition-transform duration-300 fill-current" />
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center pt-10 md:pt-12 max-w-full px-4">
+            <Link to="/portfolio" className="group w-full sm:w-auto">
+              <Button variant="neon" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 font-bebas tracking-[0.15em] sm:tracking-[0.25em] transform-gpu transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.6)] hover:-translate-y-1">
+                <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 group-hover:scale-110 transition-transform duration-300 fill-current" />
                 WATCH PORTFOLIO
               </Button>
             </Link>
-            <Link to="/contact" className="group">
-              <Button variant="hero" size="lg" className="w-full sm:w-auto text-base md:text-lg px-10 md:px-12 py-6 md:py-7 font-bebas tracking-[0.25em] transform-gpu transition-all duration-300 hover:scale-105 hover:-translate-y-1">
+            <Link to="/contact" className="group w-full sm:w-auto">
+              <Button variant="hero" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 font-bebas tracking-[0.15em] sm:tracking-[0.25em] transform-gpu transition-all duration-300 hover:scale-105 hover:-translate-y-1">
                 BOOK A SHOOT
               </Button>
             </Link>
