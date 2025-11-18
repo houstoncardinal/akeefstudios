@@ -47,6 +47,21 @@ const Footer = () => {
             </a>
           </div>
         </div>
+        
+        {/* Credit Line */}
+        <div className="text-center pt-6 mt-6 border-t border-border/50">
+          <p className="text-xs text-muted-foreground/60">
+            Created by{" "}
+            <a
+              href="https://www.visitcardinal.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground/80 hover:text-primary transition-colors underline-offset-2 hover:underline"
+            >
+              Cardinal Consulting
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
