@@ -145,11 +145,11 @@ const Portfolio = () => {
                 href="https://instagram.com/akeefstudios" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group inline-block"
+                className="group inline-block w-full sm:w-auto"
               >
-                <Button variant="neon" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em]">
-                  <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
-                  FOLLOW ON INSTAGRAM
+                <Button variant="neon" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
+                  <Instagram className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:rotate-12 transition-all duration-500" />
+                  FOLLOW <span className="hidden xs:inline">ON </span>INSTAGRAM
                 </Button>
               </a>
             </div>

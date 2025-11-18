@@ -148,7 +148,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" variant="hero" size="lg" className="w-full text-lg py-6 font-bebas tracking-[0.2em]">
+                <Button type="submit" variant="hero" size="lg" className="w-full text-sm sm:text-base md:text-lg py-5 sm:py-6 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
                   SEND MESSAGE
                 </Button>
               </form>

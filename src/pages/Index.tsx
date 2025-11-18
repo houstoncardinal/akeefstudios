@@ -85,22 +85,22 @@ const Index = () => {
           </div>
 
           {/* YouTube Channel CTA */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-stretch sm:items-center animate-fade-in-up px-4 max-w-full">
             <a 
               href="https://www.youtube.com/@akeefstudios" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group"
+              className="group w-full sm:w-auto"
             >
-              <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
-                <Youtube className="mr-3 h-6 w-6 group-hover:scale-110 transition-all duration-500" />
-                SUBSCRIBE ON YOUTUBE
+              <Button variant="neon" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] whitespace-nowrap">
+                <Youtube className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-all duration-500" />
+                <span className="hidden xs:inline">SUBSCRIBE ON </span>YOUTUBE
               </Button>
             </a>
-            <Link to="/portfolio" className="group">
-              <Button variant="outline" size="lg" className="text-lg px-10 py-6 font-bebas tracking-[0.2em] border-primary/40 hover:border-primary hover:bg-primary/10">
+            <Link to="/portfolio" className="group w-full sm:w-auto">
+              <Button variant="outline" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-5 sm:py-6 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em] border-primary/40 hover:border-primary hover:bg-primary/10">
                 FULL PORTFOLIO
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="ml-2 sm:ml-3 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-2 transition-transform" />
               </Button>
             </Link>
           </div>
@@ -128,11 +128,11 @@ const Index = () => {
               href="https://instagram.com/akeefstudios" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="group inline-block"
+              className="group inline-block w-full sm:w-auto"
             >
-              <Button variant="neon" size="lg" className="text-lg px-12 py-7 font-bebas tracking-[0.2em]">
-                <Instagram className="mr-3 h-6 w-6 group-hover:rotate-12 transition-all duration-500" />
-                FOLLOW ON INSTAGRAM
+              <Button variant="neon" size="lg" className="w-full sm:w-auto text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 sm:py-6 md:py-7 font-bebas tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.2em]">
+                <Instagram className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 group-hover:rotate-12 transition-all duration-500" />
+                FOLLOW <span className="hidden xs:inline">ON </span>INSTAGRAM
               </Button>
             </a>
           </div>
