@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Youtube, Play, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg-refined.jpg";
 import { useState, useEffect } from "react";
 
 const Hero = () => {
@@ -54,19 +54,13 @@ const Hero = () => {
           {/* 3D Main Title */}
           <div className="relative inline-block mb-6 md:mb-8 group">
             <h1 
-              className="font-bebas text-5xl sm:text-7xl md:text-[11rem] lg:text-[15rem] tracking-[0.15em] leading-none text-3d-hero transition-all duration-500"
+              className="font-bebas text-5xl sm:text-7xl md:text-[11rem] lg:text-[15rem] tracking-[0.15em] leading-none text-hero-refined transition-all duration-500"
               style={{
                 transform: `perspective(1000px) rotateX(${mousePosition.y * 0.3}deg) rotateY(${mousePosition.x * 0.3}deg) translateZ(50px)`
               }}
             >
               AKEEF STUDIOS
             </h1>
-            <div 
-              className="absolute inset-0 blur-[60px] opacity-60 bg-gradient-to-r from-primary via-primary-glow to-primary animate-pulse-slow pointer-events-none"
-              style={{
-                transform: `perspective(1000px) rotateX(${mousePosition.y * 0.2}deg) rotateY(${mousePosition.x * 0.2}deg)`
-              }}
-            ></div>
           </div>
           
           {/* 3D Subtitle */}
