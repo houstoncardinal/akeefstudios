@@ -183,6 +183,45 @@ All colors MUST be HSL.
     }
   }
 
+  /* 3D Hero Text Effect */
+  .text-3d-hero {
+    color: hsl(var(--foreground));
+    text-shadow: 
+      /* 3D depth layers */
+      1px 1px 0 hsl(var(--primary)/0.9),
+      2px 2px 0 hsl(var(--primary)/0.8),
+      3px 3px 0 hsl(var(--primary)/0.7),
+      4px 4px 0 hsl(var(--primary)/0.6),
+      5px 5px 0 hsl(var(--primary)/0.5),
+      6px 6px 0 hsl(var(--primary)/0.4),
+      7px 7px 0 hsl(var(--primary)/0.3),
+      /* Neon glow */
+      0 0 20px hsl(var(--primary)),
+      0 0 40px hsl(var(--primary)/0.8),
+      0 0 60px hsl(var(--primary)/0.6),
+      0 0 80px hsl(var(--primary)/0.4);
+    filter: drop-shadow(0 0 30px hsl(var(--primary)/0.5));
+  }
+
+  /* 3D Subtitle Effect */
+  .text-3d-subtitle {
+    text-shadow: 
+      1px 1px 0 hsl(var(--primary)/0.8),
+      2px 2px 0 hsl(var(--primary)/0.6),
+      3px 3px 0 hsl(var(--primary)/0.4),
+      0 0 15px hsl(var(--primary)),
+      0 0 30px hsl(var(--primary)/0.6);
+  }
+
+  /* Text Shadow Utilities */
+  .text-shadow-glow {
+    text-shadow: 0 0 20px hsl(var(--primary)/0.6);
+  }
+
+  .text-shadow-subtle {
+    text-shadow: 0 0 10px hsl(var(--primary)/0.4);
+  }
+
   /* Drip effect */
   .drip {
     position: relative;
