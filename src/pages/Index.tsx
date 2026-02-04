@@ -9,6 +9,7 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import CustomCursor from "@/components/CustomCursor";
 import VideoShowreelModal from "@/components/VideoShowreelModal";
 import ScrollReveal, { ScrollRevealGroup } from "@/components/ScrollReveal";
+import { FeaturesSection } from "@/components/FeaturesSection";
 import { useState } from "react";
 
 const Index = () => {
@@ -20,6 +21,9 @@ const Index = () => {
       <VideoShowreelModal isOpen={showreelOpen} onClose={() => setShowreelOpen(false)} />
       <Navigation />
       <Hero />
+
+      {/* Features Section */}
+      <FeaturesSection />
 
       {/* Showreel CTA Button - Floating */}
       <div className="fixed bottom-8 right-8 z-50 hidden md:block">
