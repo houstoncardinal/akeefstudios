@@ -1,8 +1,6 @@
-import { Camera, Film, Palette, Zap, Play, Award } from 'lucide-react'
-
+import { Camera, Film, Palette, Zap, Play, Award } from 'lucide-react';
 export function FeaturesSection() {
-    return (
-        <section className="py-24 relative overflow-hidden">
+  return <section className="py-24 relative overflow-hidden">
             {/* Background effects */}
             <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]"></div>
@@ -116,7 +114,7 @@ export function FeaturesSection() {
                 <div className="mt-16 glass rounded-2xl border border-primary/20 p-8">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         <div className="group">
-                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">50+</div>
+                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">1000+</div>
                             <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Projects Completed</div>
                         </div>
                         <div className="group">
@@ -134,6 +132,5 @@ export function FeaturesSection() {
                     </div>
                 </div>
             </div>
-        </section>
-    )
+        </section>;
 }
