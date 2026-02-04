@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Youtube, Play, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroBg from "@/assets/hero-bg-refined.jpg";
 import { useState, useEffect } from "react";
+import { InteractiveNebulaShader } from "@/components/ui/liquid-shader";
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -21,26 +21,23 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 px-4 md:pt-20 md:pb-16">
-      {/* Parallax Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-300 ease-out"
-        style={{ 
-          backgroundImage: `url(${heroBg})`,
-          transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) scale(1.1)`
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/80 to-background/98"></div>
-        <div className="absolute inset-0 bg-gradient-hero opacity-70"></div>
-      </div>
-
-      {/* Enhanced Ambient Effects with Parallax */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Interactive Nebula Shader Background */}
+      <InteractiveNebulaShader 
+        disableCenterDimming={true}
+        className="opacity-90"
+      />
+      
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/95 z-[1]"></div>
+      
+      {/* Subtle ambient glow effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-[2]">
         <div 
-          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/30 rounded-full blur-[120px] animate-float-slow"
+          className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary/20 rounded-full blur-[150px] animate-pulse-slow"
           style={{ transform: `translate(${mousePosition.x * 1.5}px, ${mousePosition.y * 1.5}px)` }}
         ></div>
         <div 
-          className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-primary-glow/20 rounded-full blur-[120px] animate-float-slow"
+          className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-primary-glow/15 rounded-full blur-[150px] animate-pulse-slow"
           style={{ 
             animationDelay: '2s',
             transform: `translate(${-mousePosition.x * 1.5}px, ${-mousePosition.y * 1.5}px)`
