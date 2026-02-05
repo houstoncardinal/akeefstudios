@@ -1,136 +1,128 @@
-import { Camera, Film, Palette, Zap, Play, Award } from 'lucide-react';
+import { Camera, Film, Palette, Zap, Award, Play, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+
 export function FeaturesSection() {
-  return <section className="py-24 relative overflow-hidden">
-            {/* Background effects */}
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--primary)/0.08),transparent_50%)]"></div>
+  return (
+    <section className="py-20 md:py-32 relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,hsl(var(--primary)/0.06),transparent_50%)]"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Two Column Layout */}
+        <div className="grid gap-12 lg:gap-20 lg:grid-cols-2 items-center">
+          {/* Left Column - Text Content */}
+          <div className="space-y-6">
+            <span className="inline-flex items-center gap-2 text-xs text-primary tracking-[0.3em] uppercase font-medium">
+              <span className="w-8 h-px bg-primary"></span>
+              Full-Service Production
+            </span>
+            <h2 className="font-bebas text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-[0.05em] text-foreground leading-[1.1]">
+              Everything You Need To{' '}
+              <span className="text-primary">Stand Out</span>
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground/80 leading-relaxed max-w-lg font-inter font-light">
+              From concept to final cut, we handle every aspect of your visual production. 
+              Cinematic quality meets rapid turnaround — your vision, amplified.
+            </p>
             
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="mx-auto grid gap-12 lg:gap-20 lg:grid-cols-2">
-                    {/* Left Column - Text Content */}
-                    <div className="lg:flex lg:flex-col lg:justify-center">
-                        <span className="text-sm text-primary tracking-[0.3em] uppercase font-medium mb-4 block">
-                            Full-Service Production
-                        </span>
-                        <h2 className="font-bebas text-4xl md:text-6xl lg:text-7xl tracking-[0.1em] text-foreground mb-6">
-                            EVERYTHING YOU NEED TO <span className="text-primary neon-text">STAND OUT</span>
-                        </h2>
-                        <p className="text-lg text-muted-foreground/80 leading-relaxed max-w-xl">
-                            From concept to final cut, we handle every aspect of your visual production. 
-                            Cinematic quality meets rapid turnaround — your vision, amplified.
-                        </p>
-                    </div>
-
-                    {/* Right Column - Visual Grid */}
-                    <div className="relative lg:py-12">
-                        {/* Main showcase image */}
-                        <div className="relative rounded-3xl overflow-hidden border border-primary/20 shadow-[0_0_60px_hsl(var(--primary)/0.15)]">
-                            <div className="aspect-[4/3] relative">
-                                {/* Gradient overlay grid effect */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-background via-card to-background"></div>
-                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.2),transparent_70%)]"></div>
-                                
-                                {/* Floating icons */}
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="grid grid-cols-3 gap-4 p-8">
-                                        <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-500 hover:scale-110 hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
-                                            <Camera className="w-8 h-8 text-primary" />
-                                        </div>
-                                        <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-500 hover:scale-110 hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
-                                            <Film className="w-8 h-8 text-primary" />
-                                        </div>
-                                        <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/60 transition-all duration-500 hover:scale-110 hover:shadow-[0_0_40px_hsl(var(--primary)/0.4)]">
-                                            <Palette className="w-8 h-8 text-primary" />
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                {/* Decorative elements */}
-                                <div className="absolute top-4 left-4 w-20 h-20 border-l-2 border-t-2 border-primary/40 rounded-tl-3xl"></div>
-                                <div className="absolute bottom-4 right-4 w-20 h-20 border-r-2 border-b-2 border-primary/40 rounded-br-3xl"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Feature Cards Grid */}
-                <div className="mt-16 border-t border-primary/20 pt-16">
-                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                        {/* Feature 1 */}
-                        <div className="group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.2)]">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                                    <Zap className="w-6 h-6 text-primary" />
-                                </div>
-                                <h3 className="font-bebas text-xl tracking-wider text-foreground">RAPID DELIVERY</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                                Fast turnaround without compromising quality. Your content ready when you need it.
-                            </p>
-                        </div>
-
-                        {/* Feature 2 */}
-                        <div className="group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.2)]">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                                    <Camera className="w-6 h-6 text-primary" />
-                                </div>
-                                <h3 className="font-bebas text-xl tracking-wider text-foreground">4K CINEMA</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                                Shot on professional cinema cameras with industry-standard lenses and lighting.
-                            </p>
-                        </div>
-
-                        {/* Feature 3 */}
-                        <div className="group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.2)]">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                                    <Palette className="w-6 h-6 text-primary" />
-                                </div>
-                                <h3 className="font-bebas text-xl tracking-wider text-foreground">COLOR GRADE</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                                Professional color grading that gives your visuals that signature cinematic look.
-                            </p>
-                        </div>
-
-                        {/* Feature 4 */}
-                        <div className="group glass p-8 rounded-2xl border border-primary/20 hover:border-primary/50 transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_hsl(var(--primary)/0.2)]">
-                            <div className="flex items-center gap-3 mb-4">
-                                <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                                    <Award className="w-6 h-6 text-primary" />
-                                </div>
-                                <h3 className="font-bebas text-xl tracking-wider text-foreground">VIRAL READY</h3>
-                            </div>
-                            <p className="text-sm text-muted-foreground/80 leading-relaxed">
-                                Optimized for maximum engagement on Instagram, TikTok, YouTube and all platforms.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Bottom Stats Bar */}
-                <div className="mt-16 glass rounded-2xl border border-primary/20 p-8">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                        <div className="group">
-                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">1000+</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Projects Completed</div>
-                        </div>
-                        <div className="group">
-                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">4</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Cities Covered</div>
-                        </div>
-                        <div className="group">
-                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">27.5K</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Instagram Following</div>
-                        </div>
-                        <div className="group">
-                            <div className="font-bebas text-4xl md:text-5xl text-primary neon-text mb-2 group-hover:scale-110 transition-transform">100%</div>
-                            <div className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Client Satisfaction</div>
-                        </div>
-                    </div>
-                </div>
+            {/* Quick Stats Row */}
+            <div className="flex flex-wrap gap-8 pt-4">
+              <div>
+                <div className="font-bebas text-3xl md:text-4xl text-primary">1000+</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Projects</div>
+              </div>
+              <div>
+                <div className="font-bebas text-3xl md:text-4xl text-primary">27.5K</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Followers</div>
+              </div>
+              <div>
+                <div className="font-bebas text-3xl md:text-4xl text-primary">4</div>
+                <div className="text-xs text-muted-foreground uppercase tracking-wider">Cities</div>
+              </div>
             </div>
-        </section>;
+          </div>
+
+          {/* Right Column - Creative CTA Card */}
+          <div className="relative">
+            {/* Main CTA Card */}
+            <div className="relative glass rounded-3xl border border-primary/20 p-8 md:p-10 overflow-hidden group hover:border-primary/40 transition-all duration-500">
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              {/* Content */}
+              <div className="relative z-10 space-y-6">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/40 flex items-center justify-center">
+                    <Play className="w-5 h-5 text-primary fill-primary" />
+                  </div>
+                  <span className="text-xs text-muted-foreground uppercase tracking-[0.2em]">Featured Work</span>
+                </div>
+                
+                <h3 className="font-bebas text-3xl md:text-4xl tracking-wide text-foreground">
+                  Ready to Create Something{' '}
+                  <span className="text-primary">Legendary?</span>
+                </h3>
+                
+                <p className="text-muted-foreground/80 font-inter font-light leading-relaxed">
+                  Join artists like Real Boston Richey and YoungBoy Never Broke Again who trust us with their visual identity.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-4 pt-2">
+                  <Link to="/portfolio">
+                    <Button variant="neon" className="w-full sm:w-auto font-bebas tracking-wider text-base px-6 py-5 group/btn">
+                      View Portfolio
+                      <ArrowRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button variant="outline" className="w-full sm:w-auto font-bebas tracking-wider text-base px-6 py-5 border-primary/30 hover:bg-primary/10 hover:border-primary/50">
+                      Book a Shoot
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute top-4 right-4 w-20 h-20 border-r border-t border-primary/20 rounded-tr-3xl"></div>
+              <div className="absolute bottom-4 left-4 w-16 h-16 border-l border-b border-primary/20 rounded-bl-2xl"></div>
+            </div>
+            
+            {/* Floating Badge */}
+            <div className="absolute -top-4 -right-4 md:top-6 md:-right-6 glass px-4 py-2 rounded-full border border-primary/30 animate-float">
+              <span className="text-xs font-medium text-primary tracking-wider">100% Quality</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards Grid */}
+        <div className="mt-20 md:mt-28 pt-12 border-t border-border/50">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Zap, title: 'Rapid Delivery', desc: 'Fast turnaround without compromising quality' },
+              { icon: Camera, title: '4K Cinema', desc: 'Professional cinema cameras and equipment' },
+              { icon: Palette, title: 'Color Grade', desc: 'Signature cinematic color grading' },
+              { icon: Award, title: 'Viral Ready', desc: 'Optimized for all social platforms' },
+            ].map((feature, index) => (
+              <div 
+                key={index}
+                className="group glass p-6 rounded-2xl border border-border/50 hover:border-primary/30 transition-all duration-300"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <feature.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="font-bebas text-lg tracking-wider text-foreground">{feature.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground/70 font-inter font-light leading-relaxed">
+                  {feature.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
