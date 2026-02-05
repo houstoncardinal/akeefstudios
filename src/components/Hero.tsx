@@ -47,51 +47,61 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10 text-center">
-        <div className="space-y-6 md:space-y-8 animate-fade-in">
-          {/* 3D Main Title */}
-          <div className="relative inline-block mb-6 md:mb-8 group">
+        <div className="space-y-4 md:space-y-6 animate-fade-in">
+          {/* Tagline Badge */}
+          <div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 backdrop-blur-sm mb-4"
+            style={{ transform: `perspective(1000px) translateZ(20px)` }}
+          >
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-xs sm:text-sm font-medium tracking-[0.2em] uppercase text-primary">Cinematic Visuals</span>
+          </div>
+
+          {/* Main Title - Cleaner Typography */}
+          <div className="relative inline-block group">
             <h1 
-              className="font-bebas text-5xl sm:text-7xl md:text-[11rem] lg:text-[15rem] tracking-[0.15em] leading-none text-hero-refined transition-all duration-500"
+              className="font-bebas text-6xl sm:text-8xl md:text-[10rem] lg:text-[12rem] xl:text-[14rem] tracking-[0.08em] leading-[0.85] text-foreground transition-all duration-500"
               style={{
-                transform: `perspective(1000px) rotateX(${mousePosition.y * 0.3}deg) rotateY(${mousePosition.x * 0.3}deg) translateZ(50px)`
+                transform: `perspective(1000px) rotateX(${mousePosition.y * 0.2}deg) rotateY(${mousePosition.x * 0.2}deg)`,
+                textShadow: '0 4px 30px rgba(0,0,0,0.5), 0 0 60px hsl(var(--primary) / 0.15)'
               }}
             >
-              AKEEF STUDIOS
+              AKEEF
+              <br />
+              <span className="text-primary" style={{ textShadow: '0 0 40px hsl(var(--primary) / 0.5), 0 0 80px hsl(var(--primary) / 0.3)' }}>
+                STUDIOS
+              </span>
             </h1>
           </div>
           
-          {/* 3D Subtitle */}
+          {/* Subtitle - Refined */}
           <div 
-            className="relative inline-block"
-            style={{
-              transform: `perspective(1000px) translateZ(30px) rotateX(${mousePosition.y * 0.2}deg)`
-            }}
+            className="relative inline-block mt-2"
+            style={{ transform: `perspective(1000px) translateZ(15px)` }}
           >
-            <p className="text-xl md:text-3xl lg:text-4xl text-primary font-bold tracking-[0.35em] uppercase luxury-underline-optimized transition-all duration-300 text-3d-subtitle">
-              FILM DIRECTOR & EDITOR
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground font-inter font-light tracking-[0.25em] uppercase">
+              Film Director & Editor
             </p>
           </div>
           
-          {/* 3D Tagline */}
+          {/* Tagline - Clean & Bold */}
           <h2 
-            className="font-bebas text-2xl sm:text-4xl md:text-6xl lg:text-7xl tracking-[0.15em] text-foreground mt-6 md:mt-8 transition-all duration-500"
-            style={{
-              transform: `perspective(1000px) translateZ(20px) rotateX(${mousePosition.y * 0.15}deg)`
-            }}
+            className="font-bebas text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[0.1em] text-foreground/90 mt-4 md:mt-6"
+            style={{ transform: `perspective(1000px) translateZ(10px)` }}
           >
-            <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent text-shadow-glow">
-              VISUALS THAT MOVE CULTURE
-            </span>
+            Visuals That Move Culture
           </h2>
           
-          {/* Description */}
+          {/* Description - Cleaner */}
           <p 
-            className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground/90 max-w-4xl mx-auto leading-relaxed pt-4 md:pt-6 font-light px-4 transition-all duration-300"
-            style={{
-              transform: `perspective(1000px) translateZ(10px)`
-            }}
+            className="text-sm sm:text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto leading-relaxed pt-2 font-inter font-light"
+            style={{ transform: `perspective(1000px) translateZ(5px)` }}
           >
-            Crafting <span className="text-primary font-semibold text-shadow-subtle">cinematic music videos</span> and <span className="text-primary font-semibold text-shadow-subtle">visual storytelling</span> across Baltimore, Dallas, Vegas, and DC
+            Crafting cinematic music videos and visual storytelling across 
+            <span className="text-primary font-normal"> Baltimore</span>, 
+            <span className="text-primary font-normal"> Dallas</span>, 
+            <span className="text-primary font-normal"> Vegas</span>, and 
+            <span className="text-primary font-normal"> DC</span>
           </p>
 
           {/* 3D CTA Buttons */}
