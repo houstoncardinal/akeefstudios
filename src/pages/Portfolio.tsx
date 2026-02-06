@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import MobileToolbar from "@/components/MobileToolbar";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Instagram, TrendingUp, Award, Film, Play } from "lucide-react";
@@ -221,6 +222,7 @@ const Portfolio = () => {
       </main>
 
       <Footer />
+      <MobileToolbar />
     </div>
   );
 };

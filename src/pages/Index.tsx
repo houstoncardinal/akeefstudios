@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
+import MobileToolbar from "@/components/MobileToolbar";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Instagram, Play, Award, Users, TrendingUp, Zap, Camera, Film, Youtube } from "lucide-react";
@@ -485,6 +486,7 @@ const Index = () => {
       </section>
 
       <Footer />
+      <MobileToolbar />
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import MobileToolbar from "@/components/MobileToolbar";
 import { Button } from "@/components/ui/button";
 import { MapPin, Award, Users } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -140,6 +141,7 @@ const About = () => {
       </main>
 
       <Footer />
+      <MobileToolbar />
     </div>
   );
 };
