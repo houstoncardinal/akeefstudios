@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import MobileToolbar from "@/components/MobileToolbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -306,6 +307,7 @@ const Contact = () => {
       </main>
 
       <Footer />
+      <MobileToolbar />
     </div>
   );
 };

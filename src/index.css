@@ -75,6 +75,19 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground overflow-x-hidden;
     font-family: 'Inter', sans-serif;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Safe area padding for mobile toolbar */
+  .pb-safe {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  /* Add bottom padding to pages when mobile toolbar is visible */
+  @media (max-width: 767px) {
+    main, .page-content {
+      padding-bottom: 5rem;
+    }
   }
 
   /* Film grain overlay effect - optimized */
